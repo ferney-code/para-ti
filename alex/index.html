@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Kai - ideas para Alex</title>
+<style>
+:root{--bg:#0b0b10;--ink:#f5f5f7;--soft:#a1a1aa;--glass:rgba(255,255,255,.07);--line:rgba(255,255,255,.12)}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+.blob{position:fixed;border-radius:50%;filter:blur(70px);opacity:.55;z-index:0;animation:float 14s ease-in-out infinite}
+.b1{width:300px;height:300px;background:#7c5cff;top:-80px;left:-80px}
+.b2{width:280px;height:280px;background:#ff7a59;top:40%;right:-120px;animation-delay:-5s}
+.b3{width:260px;height:260px;background:#19c3a6;bottom:-100px;left:10%;animation-delay:-9s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-50px) scale(1.15)}}
+.wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding:56px 18px 64px}
+header{text-align:center;margin-bottom:34px}
+.badge{display:inline-block;font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase;padding:7px 15px;border-radius:99px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(12px);animation:rise .8s both}
+h1{font-size:40px;line-height:1.05;font-weight:800;letter-spacing:-1.2px;margin:18px 0 12px;animation:rise .8s .1s both}
+h1 span{background:linear-gradient(90deg,#a99bff,#ff9d7e,#4fe3c6,#a99bff);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.sub{color:var(--soft);font-size:17px;animation:rise .8s .2s both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.grid{display:grid;gap:14px}
+.card{position:relative;display:flex;gap:16px;align-items:center;padding:18px;border-radius:24px;background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);cursor:pointer;opacity:0;transform:translateY(40px) scale(.96);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1),background .3s,border-color .3s;overflow:hidden}
+.card.in{opacity:1;transform:none}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 0% 0%,var(--c),transparent 60%);opacity:.18;transition:opacity .3s}
+.card:hover,.card:active{transform:translateY(-4px) scale(1.02);border-color:var(--c);transition-duration:.25s}
+.card:hover::before,.card.open::before{opacity:.38}
+.ico{position:relative;flex:0 0 54px;height:54px;border-radius:17px;display:grid;place-items:center;background:var(--c);box-shadow:0 8px 22px -6px var(--c);transition:transform .4s cubic-bezier(.3,1.6,.5,1)}
+.card:hover .ico,.card.open .ico{transform:rotate(-8deg) scale(1.12)}
+.ico svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.txt{position:relative;flex:1}
+.t{font-size:18px;font-weight:700;letter-spacing:-.3px}
+.d{font-size:15px;color:var(--soft);line-height:1.4;max-height:0;opacity:0;overflow:hidden;transition:max-height .45s ease,opacity .45s ease,margin .45s}
+.card.open .d{max-height:90px;opacity:1;margin-top:6px}
+.chev{position:relative;width:20px;height:20px;stroke:var(--soft);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .4s}
+.card.open .chev{transform:rotate(180deg)}
+footer{text-align:center;margin-top:36px;color:var(--soft);font-size:15px}
+.pill{display:inline-block;margin-top:14px;padding:13px 24px;border-radius:99px;font-weight:700;color:#0b0b10;background:linear-gradient(90deg,#a99bff,#ff9d7e,#4fe3c6);background-size:200% 100%;animation:shine2 4s ease-in-out infinite alternate,pulse 2.6s ease-in-out infinite}
+@keyframes shine2{to{background-position:100% 0}}
+@keyframes pulse{50%{transform:scale(1.05)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="wrap">
+<header>
+<div class="badge">Lluvia de ideas</div>
+<h1>Más cosas en que <span>Kai</span> te ayuda, Alex</h1>
+<p class="sub">Toca una tarjeta para ver más.</p>
+</header>
+<div class="grid" id="g">
+<div class="card" style="--c:#34c759"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M9 9.5c0-1 1.3-1.5 3-1.5s3 .5 3 1.7c0 2.3-6 1.3-6 3.6 0 1.2 1.3 1.7 3 1.7s3-.6 3-1.6"/></svg></div><div class="txt"><div class="t">Presupuesto y bolsillos</div><div class="d">Cada gasto en su bolsillo, con cuadros claros de cuánto va y cuánto queda.</div></div><svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="card" style="--c:#ff9f0a"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="txt"><div class="t">Aviso de reinicio de Claude</div><div class="d">Te escribe a la hora exacta en que se reinicia el límite de cada cuenta.</div></div><svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="card" style="--c:#0a84ff"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 21V9l9-6 9 6v12z"/><line x1="9" y1="21" x2="9" y2="13"/><line x1="15" y1="21" x2="15" y2="13"/></svg></div><div class="txt"><div class="t">Tu página de cocinas</div><div class="d">Sigue revisando, mejorando y publicando tus cocinas en 3D.</div></div><svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="card" style="--c:#bf5af2"><div class="ico"><svg viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-7h3zM3 19a2 2 0 0 0 2 2h1v-7H3z"/></svg></div><div class="txt"><div class="t">Aprende escuchando</div><div class="d">Pides un tema y te manda un resumen en audio, corto y en español.</div></div><svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="card" style="--c:#ff453a"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><div class="txt"><div class="t">Pagos y fechas</div><div class="d">Recordatorios de lo que hay que pagar o entregar, antes de que venza.</div></div><svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="card" style="--c:#ffd60a"><div class="ico"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div class="txt"><div class="t">Automatizar con IA</div><div class="d">Ideas y pruebas para YouTube y WhatsApp, paso a paso y sin humo.</div></div><svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+<div class="card" style="--c:#30d5c8"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/></svg></div><div class="txt"><div class="t">Cuadros de cuentas</div><div class="d">Los cuadritos de cuentas, siempre al día cuando los pidas.</div></div><svg class="chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div>
+</div>
+<footer>Todo desde WhatsApp, con audios o texto.<br><span class="pill">Dime cuál quieres</span></footer>
+</div>
+<script>
+const cs=[...document.querySelectorAll('.card')];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){const i=cs.indexOf(e.target);setTimeout(()=>e.target.classList.add('in'),(i%4)*90);io.unobserve(e.target)}}),{threshold:.15});
+cs.forEach(c=>{io.observe(c);c.addEventListener('click',()=>c.classList.toggle('open'))});
+</script>
+</body>
+</html>
